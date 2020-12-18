@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cocaColaTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CocaCola"
+        android:textColor="#F10606"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/vsTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/vsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VS"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/pepsiTv"
+        app:layout_constraintStart_toEndOf="@id/cocaColaTv"
+        app:layout_constraintTop_toTopOf="@id/cocaColaTv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/pepsiTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="   Pepsi   "
+        android:textColor="#044F8A"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vsTv"
+        app:layout_constraintTop_toTopOf="@id/vsTv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/headingTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/heading"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintStart_toStartOf="@id/cocaColaTv"
+        app:layout_constraintTop_toBottomOf="@id/cocaColaTv" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cocaColaImgV"
+        android:layout_width="0dp"
+        android:layout_height="210dp"
+        android:src="@drawable/ic_baseline_cocacola_drink_24"
+        app:layout_constraintEnd_toEndOf="@id/guidLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headingTv" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/pepsiImgV"
+        android:layout_width="0dp"
+        android:layout_height="210dp"
+        android:src="@drawable/ic_baseline_pepsi_drink_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidLine"
+        app:layout_constraintTop_toBottomOf="@id/headingTv" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cocaColaDisplayTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="56sp"
+        app:layout_constraintEnd_toEndOf="@id/guidLine"
+        app:layout_constraintStart_toStartOf="@+id/cocaColaImgV"
+        app:layout_constraintTop_toBottomOf="@+id/cocaColaImgV" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/pepsiDisplayTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="56sp"
+        app:layout_constraintEnd_toEndOf="@id/pepsiImgV"
+        app:layout_constraintStart_toEndOf="@+id/cocaColaDisplayTv"
+        app:layout_constraintTop_toBottomOf="@+id/pepsiImgV" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ccVoteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:onClick="cocaCola"
+        android:text="Vote for CocaCola"
+        android:textColor="#F44336"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/guidLine"
+        app:layout_constraintStart_toStartOf="@id/cocaColaDisplayTv"
+        app:layout_constraintTop_toBottomOf="@id/cocaColaDisplayTv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/pVoteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="pepsi"
+        android:text="Vote for Pepsi"
+        android:textColor="#0B5A98"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/pepsiDisplayTv"
+        app:layout_constraintStart_toStartOf="@id/guidLine"
+        app:layout_constraintTop_toTopOf="@id/ccVoteBtn" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ccdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="000"
+        android:textSize="56dp"
+        app:layout_constraintEnd_toEndOf="@id/guidLine"
+        app:layout_constraintStart_toStartOf="@id/ccVoteBtn"
+        app:layout_constraintTop_toBottomOf="@id/ccVoteBtn" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/pdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="000"
+        android:textSize="56dp"
+        app:layout_constraintStart_toStartOf="@id/pVoteBtn"
+        app:layout_constraintTop_toBottomOf="@id/pVoteBtn"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
